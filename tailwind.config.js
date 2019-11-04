@@ -5,10 +5,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        lightgrey: "#333333"
+        input: "#333333",
+        btnred: "#D32F27"
       }
     }
   },
-  variants: {},
+  variants: {
+    backgroundColor: ["responsive", "hover", "focus", "active"]
+  },
   plugins: []
 };
