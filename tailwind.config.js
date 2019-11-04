@@ -1,6 +1,13 @@
 module.exports = {
   theme: {
-    extend: {}
+    container: {
+      center: true
+    },
+    extend: {
+      colors: {
+        lightgrey: "#333333"
+      }
+    }
   },
   variants: {},
   plugins: []

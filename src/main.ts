@@ -3,6 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "@/assets/css/tailwind.css";
+import VueParticles from "vue-particles";
+
+Vue.use(VueParticles);
 
 Vue.config.productionTip = false;
 
