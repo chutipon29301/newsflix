@@ -4,8 +4,10 @@ import router from "./router";
 import store from "./store";
 import "@/assets/css/tailwind.css";
 import VueParticles from "vue-particles";
-
+import VuePageTransition from "vue-page-transition";
+ 
 Vue.use(VueParticles);
+Vue.use(VuePageTransition);
 
 Vue.config.productionTip = false;
 

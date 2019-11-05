@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black text-white py-8 px-8 sm:px-12 mx-8 flex flex-col w-full">
+  <div class="flex flex-col w-full">
     <div class="text-3xl font-bold mb-8">Sign In</div>
     <input
       class="shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg"
@@ -16,7 +16,7 @@
     >
       Sign In
     </button>
-    <div class="flex justify-between mb- mb-56">
+    <div class="flex justify-between mb-64">
       <label class="inline-flex items-center">
         <input
           type="checkbox"
@@ -28,7 +28,7 @@
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
-      <a href="#" class="hover:underline">Sign up now</a>
+      <router-link to="signup" class="hover:underline">Sign up now</router-link>
     </div>
   </div>
 </template>

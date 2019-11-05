@@ -6,7 +6,11 @@
     />
     <vue-particles class="absolute top-0 left-0 h-full w-full" />
     <div class="flex h-screen w-full justify-center items-center">
-      <router-view class="child-view w-full max-w-md" />
+      <div class="child-view w-full max-w-md bg-black text-white py-8 px-8 sm:px-12 mx-8">
+        <vue-page-transition>
+          <router-view />
+        </vue-page-transition>
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +23,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
 @Component
 export default class Template extends Vue {}
 </script>
