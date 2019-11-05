@@ -16,6 +16,16 @@
     >
       Sign In
     </button>
+    <div class="flex justify-between">
+      <label class="inline-flex items-center">
+        <input
+          type="checkbox"
+          class="form-checkbox border-none bg-input text-inputblack"
+        />
+        <span class="ml-2 text-inputblack">Remember me</span>
+      </label>
+      <a href="#" class="text-inputblack hover:underline">Need help ?</a>
+    </div>
   </div>
 </template>
 

@@ -1,11 +1,13 @@
 <template>
-  <div class="flex h-screen w-full justify-center items-center">
+  <div>
     <img
       src="../../assets/entry_background.jpg"
       class="absolute top-0 left-0 h-full w-full object-cover"
     />
     <vue-particles class="absolute top-0 left-0 h-full w-full" />
-    <router-view class="child-view w-full max-w-md" />
+    <div class="flex h-screen w-full justify-center items-center">
+      <router-view class="child-view w-full max-w-md" />
+    </div>
   </div>
 </template>
 

@@ -11,15 +11,15 @@ const routes: RouteConfig[] = [
     component: Home
   },
   {
-    path: "/login",
-    name: "Login",
+    path: "/signIn",
+    name: "Sign In",
     component: () =>
-      import(/* webpackChunkName: "login" */ "@/views/Entry/Template.vue"),
+      import(/* webpackChunkName: "signIn" */ "@/views/Entry/Template.vue"),
     children: [
       {
         path: "",
         component: () =>
-          import(/* webpackChunkName: "login" */ "@/views/Entry/Login.vue")
+          import(/* webpackChunkName: "signIn" */ "@/views/Entry/SignIn.vue")
       }
     ]
   }
