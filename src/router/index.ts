@@ -21,14 +21,14 @@ const routes: RouteConfig[] = [
         component: () =>
           import(/* webpackChunkName: "signIn" */ "@/views/Entry/SignIn.vue"),
         alias: "/signIn",
-        meta: { transition: 'fade-in-left' },
+        meta: { transition: "fade-in-left" }
       },
       {
         path: "signUp",
         component: () =>
           import(/* webpackChunkName: "signUp" */ "@/views/Entry/SignUp.vue"),
         alias: "/signUp",
-        meta: { transition: 'fade-in-right' },
+        meta: { transition: "fade-in-right" }
       }
     ]
   }
