@@ -11,15 +11,22 @@ const routes: RouteConfig[] = [
     component: Home
   },
   {
-    path: "/signIn",
-    name: "Sign In",
+    path: "/entry",
+    name: "",
     component: () =>
       import(/* webpackChunkName: "signIn" */ "@/views/Entry/Template.vue"),
     children: [
       {
-        path: "",
+        path: "signIn",
         component: () =>
-          import(/* webpackChunkName: "signIn" */ "@/views/Entry/SignIn.vue")
+          import(/* webpackChunkName: "signIn" */ "@/views/Entry/SignIn.vue"),
+        alias: "/signIn"
+      },
+      {
+        path: "signUp",
+        component: () =>
+          import(/* webpackChunkName: "signUp" */ "@/views/Entry/SignUp.vue"),
+        alias: "/signUp"
       }
     ]
   }
