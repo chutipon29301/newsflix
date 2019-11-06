@@ -3,30 +3,35 @@
     <div class="text-3xl font-bold mb-8">Sign In</div>
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${errorClass}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${shouldShowError || shouldShowEmailError?'border border-btnred':''}`
       "
-      placeholder="Email or phone number"
+      placeholder="Email"
       type="text"
       v-model="username"
     />
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${errorClass}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${shouldShowError?'border border-btnred':''}`
       "
       placeholder="Password"
       type="password"
       v-model="password"
     />
-    <div v-if="shouldShowError" class="mb-1 text-error font-hairline">
-      Incorrect email or password, try again.
-    </div>
+    <div
+      v-if="shouldShowError"
+      class="mb-1 text-error font-hairline"
+    >Incorrect email or password, try again.</div>
     <div v-else class="mb-8" />
     <button
-      class="shadow rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-btnred text-lg hover:bg-red-800 active:bg-red-900"
+      :class="
+        `shadow rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline text-lg ${
+          allowLogin
+            ? 'bg-btnred hover:bg-red-800 active:bg-red-900'
+            : 'cursor-not-allowed bg-input hover:bg-input active:bg-input'
+        }`
+      "
       @click="signIn"
-    >
-      Sign In
-    </button>
+    >Sign In</button>
     <div class="flex justify-between mb-64">
       <label class="inline-flex items-center">
         <input
@@ -36,9 +41,7 @@
         />
         <span class="ml-2 text-inputblack">Remember me</span>
       </label>
-      <router-link to="#" class="text-inputblack hover:underline"
-        >Need help ?</router-link
-      >
+      <router-link to="#" class="text-inputblack hover:underline">Need help ?</router-link>
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
@@ -57,7 +60,18 @@ export default class Login extends Vue {
   private rememberUser: boolean = false;
   private shouldShowError: boolean = false;
 
+  private get allowLogin(): boolean {
+    return this.username !== "" && this.password !== "" && !this.shouldShowEmailError;
+  }
+
+  private get shouldShowEmailError(): boolean {
+    return this.username !== "" && !this.validateEmailString(this.username);
+  }
+
   private signIn() {
+    if (!this.allowLogin) {
+      return;
+    }
     if (this.username === "abc@gmail.com" && this.password === "password") {
       this.shouldShowError = false;
       setTimeout(() => {
@@ -70,8 +84,9 @@ export default class Login extends Vue {
     }
   }
 
-  private get errorClass(): string {
-    return this.shouldShowError ? "border border-btnred" : "";
+  private validateEmailString(email: string): boolean {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
   }
 }
 </script>

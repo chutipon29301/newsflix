@@ -2,11 +2,7 @@
   <div class="flex flex-col">
     <div class="text-3xl font-bold mb-8">Sign Up</div>
     <input
-      :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
-          shouldShowNameError ? 'border border-btnred' : ''
-        }`
-      "
+      class="shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg"
       placeholder="Name (e.g. John Doe)"
       type="text"
       v-model="name"
@@ -50,9 +46,7 @@
         }`
       "
       @click="createAccount"
-    >
-      Create account
-    </button>
+    >Create account</button>
     <router-link to="signin" class="hover:underline">
       <font-awesome-icon icon="arrow-left" class="mr-2" />Sign In
     </router-link>
@@ -78,15 +72,11 @@ export default class SignUp extends Vue {
 
   private get shouldShowEmailError(): boolean {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return !re.test(this.email);
+    return this.email !== "" && !re.test(this.email);
   }
 
   private get shouldShowPasswordError(): boolean {
-    return (
-      this.password === "" ||
-      this.confirmPassword === "" ||
-      this.password !== this.confirmPassword
-    );
+    return this.password !== this.confirmPassword;
   }
 
   private get allowToCreateAccount(): boolean {
@@ -95,11 +85,6 @@ export default class SignUp extends Vue {
       this.shouldShowEmailError ||
       this.shouldShowPasswordError
     );
-  }
-
-  private validateEmailString(email: string): boolean {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
   }
 }
 </script>
