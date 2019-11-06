@@ -46,7 +46,9 @@
         }`
       "
       @click="createAccount"
-    >Create account</button>
+    >
+      Create account
+    </button>
     <router-link to="signin" class="hover:underline">
       <font-awesome-icon icon="arrow-left" class="mr-2" />Sign In
     </router-link>

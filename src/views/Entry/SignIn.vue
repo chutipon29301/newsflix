@@ -3,7 +3,9 @@
     <div class="text-3xl font-bold mb-8">Sign In</div>
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${shouldShowError || shouldShowEmailError?'border border-btnred':''}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowError || shouldShowEmailError ? 'border border-btnred' : ''
+        }`
       "
       placeholder="Email"
       type="text"
@@ -11,16 +13,17 @@
     />
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${shouldShowError?'border border-btnred':''}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowError ? 'border border-btnred' : ''
+        }`
       "
       placeholder="Password"
       type="password"
       v-model="password"
     />
-    <div
-      v-if="shouldShowError"
-      class="mb-1 text-error font-hairline"
-    >Incorrect email or password, try again.</div>
+    <div v-if="shouldShowError" class="mb-1 text-error font-hairline">
+      Incorrect email or password, try again.
+    </div>
     <div v-else class="mb-8" />
     <button
       :class="
@@ -31,7 +34,9 @@
         }`
       "
       @click="signIn"
-    >Sign In</button>
+    >
+      Sign In
+    </button>
     <div class="flex justify-between mb-64">
       <label class="inline-flex items-center">
         <input
@@ -41,7 +46,9 @@
         />
         <span class="ml-2 text-inputblack">Remember me</span>
       </label>
-      <router-link to="#" class="text-inputblack hover:underline">Need help ?</router-link>
+      <router-link to="#" class="text-inputblack hover:underline"
+        >Need help ?</router-link
+      >
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
@@ -61,7 +68,9 @@ export default class Login extends Vue {
   private shouldShowError: boolean = false;
 
   private get allowLogin(): boolean {
-    return this.username !== "" && this.password !== "" && !this.shouldShowEmailError;
+    return (
+      this.username !== "" && this.password !== "" && !this.shouldShowEmailError
+    );
   }
 
   private get shouldShowEmailError(): boolean {
