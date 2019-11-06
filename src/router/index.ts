@@ -1,14 +1,18 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    component: () =>
+      import(/* webpackChunkName: "home" */ "@/views/Home/Template.vue"),
+    children: [{
+      path: "",
+      component: () =>
+        import(/* webpackChunkName: "home" */ "@/views/Home/Index.vue"),
+    }]
   },
   {
     path: "/entry",
