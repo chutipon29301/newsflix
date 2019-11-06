@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <NavBar />
     <div>This is template view</div>
     <router-view />

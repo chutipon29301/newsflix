@@ -8,18 +8,13 @@ const routes: RouteConfig[] = [
     path: "/",
     component: () =>
       import(/* webpackChunkName: "home" */ "@/views/Home/Template.vue"),
-    children: [{
-      path: "",
-      component: () =>
-        import(/* webpackChunkName: "home" */ "@/views/Home/Index.vue"),
-    }],
-    beforeEnter: (from, to, next) => {
-      if (localStorage.isSignIn) {
-        next();
-      }else {
-        next("/signIn");
+    children: [
+      {
+        path: "",
+        component: () =>
+          import(/* webpackChunkName: "home" */ "@/views/Home/Index.vue")
       }
-    }
+    ]
   },
   {
     path: "/entry",
