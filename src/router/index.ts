@@ -12,7 +12,14 @@ const routes: RouteConfig[] = [
       path: "",
       component: () =>
         import(/* webpackChunkName: "home" */ "@/views/Home/Index.vue"),
-    }]
+    }],
+    beforeEnter: (from, to, next) => {
+      if (localStorage.isSignIn) {
+        next();
+      }else {
+        next("/signIn");
+      }
+    }
   },
   {
     path: "/entry",
@@ -34,7 +41,14 @@ const routes: RouteConfig[] = [
         alias: "/signUp",
         meta: { transition: "fade-in-right" }
       }
-    ]
+    ],
+    beforeEnter: (from, to, next) => {
+      if (localStorage.isSignIn) {
+        next("/");
+      } else {
+        next();
+      }
+    }
   }
 ];
 

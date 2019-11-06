@@ -39,6 +39,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import router from "@/router";
 @Component
 export default class Login extends Vue {
   private username: string = "";
@@ -47,7 +48,8 @@ export default class Login extends Vue {
 
   private signIn() {
     if (this.username === "abc@gmail.com" && this.password === "password") {
-      // console.log("Redirect");
+      localStorage.isSignIn = true;
+      router.push("/");
     }
   }
 }
