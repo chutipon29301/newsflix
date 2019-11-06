@@ -7,7 +7,8 @@ module.exports = {
       colors: {
         input: "#333333",
         btnred: "#D32F27",
-        inputblack: "#8C8C8C"
+        inputblack: "#8C8C8C",
+        error: "#EB5757",
       }
     }
   },

@@ -2,23 +2,25 @@
   <div class="flex flex-col w-full">
     <div class="text-3xl font-bold mb-8">Sign In</div>
     <input
-      class="shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg"
+      :class="`shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${errorClass}`"
       placeholder="Email or phone number"
       type="text"
       v-model="username"
     />
     <input
-      class="shadow appearance-none rounded w-full py-4 px-3 mb-12 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg"
+      :class="`shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${errorClass}`"
       placeholder="Password"
       type="password"
       v-model="password"
     />
+    <div v-if="shouldShowError" class="mb-1 text-error font-hairline">
+      Incorrect email or password, try again.
+    </div>
+    <div v-else class="mb-8"/>
     <button
       class="shadow rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-btnred text-lg hover:bg-red-800 active:bg-red-900"
       @click="signIn"
-    >
-      Sign In
-    </button>
+    >Sign In</button>
     <div class="flex justify-between mb-64">
       <label class="inline-flex items-center">
         <input
@@ -28,9 +30,7 @@
         />
         <span class="ml-2 text-inputblack">Remember me</span>
       </label>
-      <router-link to="#" class="text-inputblack hover:underline"
-        >Need help ?</router-link
-      >
+      <router-link to="#" class="text-inputblack hover:underline">Need help ?</router-link>
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
@@ -47,11 +47,26 @@ export default class Login extends Vue {
   private username: string = "";
   private password: string = "";
   private rememberUser: boolean = false;
+  private shouldShowError: boolean = false;
 
   private signIn() {
     if (this.username === "abc@gmail.com" && this.password === "password") {
-      localStorage.isSignIn = true;
-      router.push("/");
+      this.shouldShowError = false;
+      setTimeout(() => {
+        router.push("/");
+      }, 500);
+      // localStorage.isSignIn = true;
+    } else {
+      this.shouldShowError = true;
+      this.password = "";
+    }
+  }
+
+  private get errorClass(): string {
+    if (this.shouldShowError) {
+      return "border border-btnred";
+    } else {
+      return "";
     }
   }
 }
