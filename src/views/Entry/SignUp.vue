@@ -2,38 +2,44 @@
   <div class="flex flex-col">
     <div class="text-3xl font-bold mb-8">Sign Up</div>
     <input
-      class="shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg"
+      :class="
+        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowNameError ? 'border border-btnred' : ''
+        }`
+      "
       placeholder="Name (e.g. John Doe)"
       type="text"
       v-model="name"
-      @change="validateInput"
     />
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${emailErrorClass}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowEmailError ? 'border border-btnred' : ''
+        }`
       "
       placeholder="Email"
       type="email"
       v-model="email"
-      @change="validateInput"
     />
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${passwordErrorClass}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowPasswordError ? 'border border-btnred' : ''
+        }`
       "
       placeholder="Password (8-20 characters)"
       type="password"
       v-model="password"
-      @change="validateInput"
     />
     <input
       :class="
-        `shadow appearance-none rounded w-full py-4 px-3 mb-12 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${passwordErrorClass}`
+        `shadow appearance-none rounded w-full py-4 px-3 mb-12 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+          shouldShowPasswordError ? 'border border-btnred' : ''
+        }`
       "
       placeholder="Confirm Password"
       type="password"
       v-model="confirmPassword"
-      @change="validateInput"
     />
     <button
       :class="
@@ -61,40 +67,34 @@ export default class SignUp extends Vue {
   private email: string = "";
   private password: string = "";
   private confirmPassword: string = "";
-  private shouldShowEmailError: boolean = false;
-  private shouldShowPasswordError: boolean = false;
 
   private createAccount() {
     // console.log("Create Account");
   }
 
-  private validateInput() {
-    this.shouldShowPasswordError = false;
-    this.shouldShowEmailError = false;
-    const isValidEmail = this.validateEmailString(this.email);
-    if (!isValidEmail) {
-      this.shouldShowEmailError = true;
-      return;
-    }
-    if (
+  private get shouldShowNameError(): boolean {
+    return this.name === "";
+  }
+
+  private get shouldShowEmailError(): boolean {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return !re.test(this.email);
+  }
+
+  private get shouldShowPasswordError(): boolean {
+    return (
       this.password === "" ||
       this.confirmPassword === "" ||
       this.password !== this.confirmPassword
-    ) {
-      this.shouldShowPasswordError = true;
-    }
-  }
-
-  private get emailErrorClass(): string {
-    return this.shouldShowEmailError ? "border border-btnred" : "";
-  }
-
-  private get passwordErrorClass(): string {
-    return this.shouldShowPasswordError ? "border border-btnred" : "";
+    );
   }
 
   private get allowToCreateAccount(): boolean {
-    return !(this.shouldShowEmailError || this.shouldShowPasswordError);
+    return !(
+      this.shouldShowNameError ||
+      this.shouldShowEmailError ||
+      this.shouldShowPasswordError
+    );
   }
 
   private validateEmailString(email: string): boolean {
