@@ -47,7 +47,7 @@ export default class SignUp extends Vue {
   private confirmPassword: string = "";
 
   private createAccount() {
-    console.log("Create Account");
+    // console.log("Create Account");
   }
 }
 </script>
