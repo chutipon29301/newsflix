@@ -8,6 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import NavBar from "@/components/Home/NavBar.vue";
+
 @Component({
   components: {
     NavBar
