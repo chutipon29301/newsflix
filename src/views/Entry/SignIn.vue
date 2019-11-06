@@ -28,7 +28,9 @@
         />
         <span class="ml-2 text-inputblack">Remember me</span>
       </label>
-      <router-link to="#" class="text-inputblack hover:underline">Need help ?</router-link>
+      <router-link to="#" class="text-inputblack hover:underline"
+        >Need help ?</router-link
+      >
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
