@@ -1,7 +1,8 @@
 <template>
   <div class="flex w-full shadow justify-between px-4">
-    <div>
+    <div class="flex">
       <img src="../../assets/logo.png" class="w-48" />
+      <div>Search</div>
     </div>
     <div class="flex items-center">
       <div>Hello</div>
