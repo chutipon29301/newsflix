@@ -2,23 +2,19 @@
   <div>
     <img
       src="../../assets/entry_background.jpg"
-      class="absolute top-0 left-0 h-full w-full object-cover"
+      class="fixed select-none top-0 left-0 h-full w-full object-cover"
     />
-    <vue-particles class="absolute top-0 left-0 h-full w-full" />
-    <div
-      class="absolute top-0 left-0 flex justify-between w-full pt-2 pl-4 pr-16"
-    >
-      <router-link to="/">
+    <vue-particles class="fixed select-none top-0 left-0 h-full w-full" />
+    <div class="flex flex-col h-screen w-full items-center sm:items-start">
+      <router-link to="/" class="z-10 mt-4 mb-8 sm:mb-0">
         <img src="../../assets/logo.png" class="z-10" />
       </router-link>
-    </div>
-    <div class="flex h-screen w-full justify-center items-center">
-      <div
-        class="z-10 w-full max-w-md bg-black text-white py-8 px-8 sm:px-12 mx-8"
-      >
-        <vue-page-transition>
-          <router-view />
-        </vue-page-transition>
+      <div class="flex h-screen w-full justify-center items-center">
+        <div class="z-10 w-full max-w-md bg-black text-white py-8 px-8 sm:px-12 mx-8">
+          <vue-page-transition>
+            <router-view />
+          </vue-page-transition>
+        </div>
       </div>
     </div>
   </div>
