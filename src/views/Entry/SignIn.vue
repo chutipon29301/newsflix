@@ -81,7 +81,10 @@ export default class Login extends Vue {
     if (!this.allowLogin) {
       return;
     }
-    if (this.username === "abc@gmail.com" && this.password === "password") {
+    if (
+      this.username.toLowerCase() === "abc@gmail.com" &&
+      this.password === "password"
+    ) {
       this.shouldShowError = false;
       setTimeout(() => {
         router.push("/");
