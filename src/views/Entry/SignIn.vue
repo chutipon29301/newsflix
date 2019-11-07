@@ -41,7 +41,7 @@
     >
       Sign In
     </button>
-    <div class="flex justify-between mb-64">
+    <div class="flex justify-between mb-20 sm:mb-64">
       <label class="inline-flex items-center">
         <input
           type="checkbox"

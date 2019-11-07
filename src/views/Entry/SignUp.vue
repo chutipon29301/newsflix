@@ -92,7 +92,7 @@
     <div v-else class="mb-8" />
     <button
       :class="
-        `shadow rounded w-full py-4 px-3 mb-40 text-white leading-tight focus:outline-none focus:shadow-outline text-lg ${
+        `shadow rounded w-full py-4 px-3 mb-16 sm:mb-40 text-white leading-tight focus:outline-none focus:shadow-outline text-lg ${
           allowToCreateAccount
             ? 'bg-btnred hover:bg-red-800 active:bg-red-900'
             : 'cursor-not-allowed bg-input hover:bg-input active:bg-input'
@@ -118,7 +118,9 @@ export default class SignUp extends Vue {
   private confirmPassword: string = "";
 
   private createAccount() {
-    // console.log("Create Account");
+    if (this.allowToCreateAccount) {
+      this.$router.push("/");
+    }
   }
 
   private get shouldShowNameError(): boolean {
