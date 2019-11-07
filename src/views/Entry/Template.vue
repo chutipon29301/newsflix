@@ -10,7 +10,9 @@
         <img src="../../assets/logo.png" class="z-10 select-none" />
       </router-link>
       <div class="flex h-screen w-full justify-center items-center">
-        <div class="z-10 w-full max-w-md bg-black text-white py-8 px-8 sm:px-12 mx-4">
+        <div
+          class="z-10 w-full max-w-md bg-black text-white py-8 px-8 sm:px-12 mx-4"
+        >
           <vue-page-transition>
             <router-view />
           </vue-page-transition>

@@ -9,16 +9,18 @@
       </div>
       <input
         :class="
-        `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
-          shouldShowNameError ? 'border border-btnred' : ''
-        }`
-      "
+          `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+            shouldShowNameError ? 'border border-btnred' : ''
+          }`
+        "
         placeholder="Name (e.g. John Doe)"
         type="text"
         v-model="name"
       />
     </div>
-    <div v-if="shouldShowNameError" class="mb-2 text-error font-hairline">Invalid name</div>
+    <div v-if="shouldShowNameError" class="mb-2 text-error font-hairline">
+      Invalid name
+    </div>
     <div v-else class="mb-2" />
     <div class="inline-block relative w-full mb-2">
       <div
@@ -28,16 +30,18 @@
       </div>
       <input
         :class="
-        `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
-          shouldShowEmailError ? 'border border-btnred' : ''
-        }`
-      "
+          `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+            shouldShowEmailError ? 'border border-btnred' : ''
+          }`
+        "
         placeholder="Email"
         type="email"
         v-model="email"
       />
     </div>
-    <div v-if="shouldShowEmailError" class="mb-2 text-error font-hairline">Invalid email</div>
+    <div v-if="shouldShowEmailError" class="mb-2 text-error font-hairline">
+      Invalid email
+    </div>
     <div v-else class="mb-2" />
     <div class="inline-block relative w-full mb-2">
       <div
@@ -47,16 +51,20 @@
       </div>
       <input
         :class="
-        `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
-          shouldShowPasswordError || shouldShowPasswordMismatchError ? 'border border-btnred' : ''
-        }`
-      "
+          `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+            shouldShowPasswordError || shouldShowPasswordMismatchError
+              ? 'border border-btnred'
+              : ''
+          }`
+        "
         placeholder="Password (8-20 characters)"
         type="password"
         v-model="password"
       />
     </div>
-    <div v-if="shouldShowPasswordError" class="mb-2 text-error font-hairline">Invalid Password</div>
+    <div v-if="shouldShowPasswordError" class="mb-2 text-error font-hairline">
+      Invalid Password
+    </div>
     <div v-else class="mb-2" />
     <div class="inline-block relative w-full mb-2">
       <div
@@ -66,10 +74,10 @@
       </div>
       <input
         :class="
-        `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
-          shouldShowPasswordMismatchError ? 'border border-btnred' : ''
-        }`
-      "
+          `shadow appearance-none rounded w-full py-4 pr-3 pl-10 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
+            shouldShowPasswordMismatchError ? 'border border-btnred' : ''
+          }`
+        "
         placeholder="Confirm Password"
         type="password"
         v-model="confirmPassword"
@@ -78,7 +86,9 @@
     <div
       v-if="shouldShowPasswordMismatchError"
       class="mb-6 text-error font-hairline"
-    >Mismatch password</div>
+    >
+      Mismatch password
+    </div>
     <div v-else class="mb-8" />
     <button
       :class="
@@ -89,7 +99,9 @@
         }`
       "
       @click="createAccount"
-    >Create account</button>
+    >
+      Create account
+    </button>
     <router-link to="signin" class="hover:underline">
       <font-awesome-icon icon="arrow-left" class="mr-2" />Sign In
     </router-link>

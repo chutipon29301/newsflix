@@ -14,7 +14,7 @@
     <div v-if="shouldShowEmailError" class="mb-2 text-error font-hairline">
       Invalid email
     </div>
-    <div v-else class="mb-4"/>
+    <div v-else class="mb-4" />
     <input
       :class="
         `shadow appearance-none rounded w-full py-4 px-3 mb-2 text-white leading-tight focus:outline-none focus:shadow-outline bg-input text-lg ${
@@ -28,7 +28,7 @@
     <div v-if="shouldShowError" class="mb-2 text-error font-hairline">
       Incorrect email or password, try again.
     </div>
-    <div v-else class="mb-4"/>
+    <div v-else class="mb-4" />
     <button
       :class="
         `shadow rounded w-full py-4 px-3 mt-4 mb-4 text-white leading-tight focus:outline-none focus:shadow-outline text-lg ${
