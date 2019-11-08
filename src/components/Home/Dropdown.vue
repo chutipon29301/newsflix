@@ -9,7 +9,10 @@
       tabindex="-1"
       class="fixed inset-0 h-full w-full cursor-default"
     ></button>
-    <div v-if="isOpen" class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2">
+    <div
+      v-if="isOpen"
+      class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2"
+    >
       <div v-if="isSignIn">
         <div class="px-4 my-2">
           <div class="font-thin select-none">Signed in as</div>
@@ -20,12 +23,15 @@
           <router-link
             to="#"
             class="py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
-          >View Profile</router-link>
+            >View Profile</router-link
+          >
           <button
             to="#"
             class="pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left"
             @click="signOut"
-          >Sign out</button>
+          >
+            Sign out
+          </button>
         </div>
       </div>
       <div v-else>
@@ -33,7 +39,8 @@
           <router-link
             to="/signin"
             class="py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
-          >Sign in</router-link>
+            >Sign in</router-link
+          >
         </div>
       </div>
     </div>

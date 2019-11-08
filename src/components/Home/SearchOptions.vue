@@ -11,13 +11,20 @@
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black"
         >
-          <font-awesome-icon icon="location-arrow" class="text-inputblack mr-2" />
-          <div class="text-inputblack text-xs select-none">Your recent location</div>
+          <font-awesome-icon
+            icon="location-arrow"
+            class="text-inputblack mr-2"
+          />
+          <div class="text-inputblack text-xs select-none">
+            Your recent location
+          </div>
         </div>
       </div>
       <button
         class="bg-searchoptionbutton hover:bg-searchoptionbuttonhover active:bg-searchoptionbuttonactive z-10 text-white px-6 rounded-r text-xs"
-      >Change the location</button>
+      >
+        Change the location
+      </button>
     </div>
   </div>
 </template>

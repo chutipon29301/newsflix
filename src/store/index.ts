@@ -4,7 +4,7 @@ import Vuex, { StoreOptions } from "vuex";
 Vue.use(Vuex);
 
 interface GlobalStore {
-  isSignIn: boolean
+  isSignIn: boolean;
 }
 
 const store: StoreOptions<GlobalStore> = {
@@ -12,13 +12,13 @@ const store: StoreOptions<GlobalStore> = {
     isSignIn: false
   },
   getters: {
-    isSignIn: ({ isSignIn }) => isSignIn,
+    isSignIn: ({ isSignIn }) => isSignIn
   },
   mutations: {
-    signIn: (state) => {
+    signIn: state => {
       state.isSignIn = true;
     },
-    signOut: (state) => {
+    signOut: state => {
       state.isSignIn = false;
     }
   },
@@ -27,19 +27,19 @@ const store: StoreOptions<GlobalStore> = {
       if (shouldRemember) {
         localStorage.isSignIn = true;
       }
-      commit('signIn');
+      commit("signIn");
     },
     signOut: ({ commit }) => {
       localStorage.isSignIn = undefined;
-      commit('signOut');
+      commit("signOut");
     },
     loadIsSignInStatus: ({ commit }) => {
       if (localStorage.isSignIn === true) {
-        commit('signIn');
+        commit("signIn");
       }
     }
   },
   modules: {}
-}
+};
 
 export default new Vuex.Store(store);
