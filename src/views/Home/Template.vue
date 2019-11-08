@@ -1,6 +1,7 @@
 <template>
   <div class="w-full">
-    <NavBar />
+    <NavBar class="fixed" />
+    <div class="h-16"/>
     <div>This is template view</div>
     <router-view />
   </div>

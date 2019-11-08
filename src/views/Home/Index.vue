@@ -1,5 +1,5 @@
 <template>
-  <div>This is index view</div>
+  <div class="h-screen bg-blue-400">This is index view</div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
