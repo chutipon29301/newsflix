@@ -13,17 +13,12 @@
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
         >
-          <font-awesome-icon
-            icon="search"
-            class="absolute right-0 text-inputblack mr-4"
-          />
+          <font-awesome-icon icon="search" class="absolute right-0 text-inputblack mr-4" />
         </div>
       </div>
     </div>
     <div class="flex items-center mr-2 ml-4">
-      <button>
-        <font-awesome-icon icon="bars" />
-      </button>
+      <Dropdown />
     </div>
   </div>
 </template>
@@ -53,10 +48,12 @@
 import { Component, Vue } from "vue-property-decorator";
 import vAutocomplete from "v-autocomplete";
 import searchItems from "@/components/Home/SearchItems.vue";
+import Dropdown from "@/components/Home/Dropdown.vue";
 
 @Component({
   components: {
-    vAutocomplete
+    vAutocomplete,
+    Dropdown
   }
 })
 export default class NavBar extends Vue {

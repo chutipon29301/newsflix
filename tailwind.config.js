@@ -8,7 +8,8 @@ module.exports = {
         input: "#333333",
         btnred: "#D32F27",
         inputblack: "#8C8C8C",
-        error: "#EB5757"
+        error: "#EB5757",
+        inputhover: "#E0E0E0"
       }
     }
   },
