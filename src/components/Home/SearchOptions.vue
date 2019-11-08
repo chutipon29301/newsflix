@@ -7,6 +7,7 @@
           class="appearance-none rounded-l w-full h-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-white text-xs"
           type="text"
           v-model="location"
+          disabled
         />
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black"
