@@ -11,9 +11,7 @@
       type="text"
       v-model="username"
     />
-    <div v-if="shouldShowEmailError" class="mb-2 text-error font-hairline">
-      Invalid email
-    </div>
+    <div v-if="shouldShowEmailError" class="mb-2 text-error font-hairline">Invalid email</div>
     <div v-else class="mb-4" />
     <input
       :class="
@@ -25,9 +23,10 @@
       type="password"
       v-model="password"
     />
-    <div v-if="shouldShowError" class="mb-2 text-error font-hairline">
-      Incorrect email or password, try again.
-    </div>
+    <div
+      v-if="shouldShowError"
+      class="mb-2 text-error font-hairline"
+    >Incorrect email or password, try again.</div>
     <div v-else class="mb-4" />
     <button
       :class="
@@ -38,9 +37,7 @@
         }`
       "
       @click="signIn"
-    >
-      Sign In
-    </button>
+    >Sign In</button>
     <div class="flex justify-between mb-20 sm:mb-64">
       <label class="inline-flex items-center">
         <input
@@ -50,9 +47,7 @@
         />
         <span class="ml-2 text-inputblack">Remember me</span>
       </label>
-      <router-link to="#" class="text-inputblack hover:underline"
-        >Need help ?</router-link
-      >
+      <router-link to="#" class="text-inputblack hover:underline">Need help ?</router-link>
     </div>
     <div class="flex">
       <div class="text-inputblack mr-4">New to Newsflix ?</div>
@@ -93,7 +88,7 @@ export default class Login extends Vue {
       setTimeout(() => {
         router.push("/");
       }, 500);
-      // localStorage.isSignIn = true;
+      this.$store.dispatch("signIn", this.rememberUser);
     } else {
       this.shouldShowError = true;
       this.password = "";

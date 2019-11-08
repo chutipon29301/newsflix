@@ -25,12 +25,13 @@
         >
           View Profile
         </router-link>
-        <router-link
+        <button
           to="#"
           class=" pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left"
+          @click="signOut"
         >
           Sign out
-        </router-link>
+        </button>
       </div>
     </div>
   </div>
@@ -44,6 +45,10 @@ export default class Dropdown extends Vue {
 
   private toggle() {
     this.isOpen = !this.isOpen;
+  }
+
+  private signOut() {
+    this.$store.dispatch("signOut");
   }
 }
 </script>
