@@ -11,8 +11,12 @@
       </div>
       <hr />
       <div class="flex flex-col">
-        <button class="px-4 h-8 hover:bg-inputhover w-full text-left">View Profile</button>
-        <button class="px-4 h-8 hover:bg-inputhover w-full text-left">Sign out</button>
+        <router-link to="#" class=" py-2 px-4 h-10 hover:bg-inputhover w-full text-left">
+          View Profile
+        </router-link>
+        <router-link to="#" class=" pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left">
+          Sign out
+        </router-link>
       </div>
     </div>
   </div>

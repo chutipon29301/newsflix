@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full h-16 shadow justify-between pr-4 bg-white">
+  <div class="flex w-full shadow justify-between pr-4 bg-white">
     <div class="flex items-center flex-1">
       <img src="../../assets/logo.png" class="w-48" />
       <div class="inline-block relative w-64 flex-1 mr-48">
