@@ -9,29 +9,32 @@
       tabindex="-1"
       class="fixed inset-0 h-full w-full cursor-default"
     ></button>
-    <div
-      v-if="isOpen"
-      class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2 pt-2"
-    >
-      <div class="px-4 mb-2">
-        <div class="font-thin select-none">Signed in as</div>
-        <div class="font-bold">Username</div>
+    <div v-if="isOpen" class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2">
+      <div v-if="isSignIn">
+        <div class="px-4 my-2">
+          <div class="font-thin select-none">Signed in as</div>
+          <div class="font-bold">Username</div>
+        </div>
+        <hr />
+        <div class="flex flex-col">
+          <router-link
+            to="#"
+            class="py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
+          >View Profile</router-link>
+          <button
+            to="#"
+            class="pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left"
+            @click="signOut"
+          >Sign out</button>
+        </div>
       </div>
-      <hr />
-      <div class="flex flex-col">
-        <router-link
-          to="#"
-          class=" py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
-        >
-          View Profile
-        </router-link>
-        <button
-          to="#"
-          class=" pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left"
-          @click="signOut"
-        >
-          Sign out
-        </button>
+      <div v-else>
+        <div class="flex flex-col">
+          <router-link
+            to="/signin"
+            class="py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
+          >Sign in</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -39,8 +42,16 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-@Component
+import { mapGetters } from "vuex";
+@Component({
+  computed: {
+    ...mapGetters({
+      isSignIn: "isSignIn"
+    })
+  }
+})
 export default class Dropdown extends Vue {
+  private isSignIn!: boolean;
   private isOpen: boolean = false;
 
   private toggle() {
