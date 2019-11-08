@@ -13,7 +13,10 @@
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
         >
-          <font-awesome-icon icon="search" class="absolute right-0 text-inputblack mr-4" />
+          <font-awesome-icon
+            icon="search"
+            class="absolute right-0 text-inputblack mr-4"
+          />
         </div>
       </div>
     </div>

@@ -3,18 +3,32 @@
     <button class="text-gray-700 hover:text-gray-900" @click="toggle">
       <font-awesome-icon icon="bars" />
     </button>
-    <button v-if="isOpen" @click="isOpen = false" tabindex="-1" class="fixed inset-0 h-full w-full cursor-default"></button>
-    <div v-if="isOpen" class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2 pt-2">
+    <button
+      v-if="isOpen"
+      @click="isOpen = false"
+      tabindex="-1"
+      class="fixed inset-0 h-full w-full cursor-default"
+    ></button>
+    <div
+      v-if="isOpen"
+      class="absolute right-0 border shadow w-48 bg-white rounded-lg mt-2 pt-2"
+    >
       <div class="px-4 mb-2">
         <div class="font-thin select-none">Signed in as</div>
         <div class="font-bold">Username</div>
       </div>
       <hr />
       <div class="flex flex-col">
-        <router-link to="#" class=" py-2 px-4 h-10 hover:bg-inputhover w-full text-left">
+        <router-link
+          to="#"
+          class=" py-2 px-4 h-10 hover:bg-inputhover w-full text-left"
+        >
           View Profile
         </router-link>
-        <router-link to="#" class=" pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left">
+        <router-link
+          to="#"
+          class=" pt-2 pb-4 px-4 h-10 hover:bg-inputhover w-full text-left"
+        >
           Sign out
         </router-link>
       </div>

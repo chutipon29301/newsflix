@@ -1,8 +1,8 @@
 <template>
   <div class="w-full">
     <NavBar class="fixed h-12 z-10" />
-    <div class="h-12"/>
-    <SearchOptions class="fixed"/>
+    <div class="h-12" />
+    <SearchOptions class="fixed" />
     <router-view />
   </div>
 </template>
