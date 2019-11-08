@@ -44,6 +44,11 @@ const routes: RouteConfig[] = [
         next();
       }
     }
+  },{
+    path: "*",
+    name:"Not Found",
+    component: () =>
+    import(/* webpackChunkName: "404" */ "@/views/NotFound.vue"),
   }
 ];
 
