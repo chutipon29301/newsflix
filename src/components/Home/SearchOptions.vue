@@ -3,7 +3,7 @@
     <div class="absolute bg-searchoption opacity-75 w-full inset-0" />
     <div
       v-if="!showCustomOptions"
-      class="container py-2 h-12 flex justify-center"
+      class="container py-2 h-12 flex justify-center px-4"
     >
       <div class="inline-block relative flex-1">
         <input
@@ -31,7 +31,7 @@
         Change the location
       </button>
     </div>
-    <div v-if="showCustomOptions" class="container py-2 h-32 flex">
+    <div v-if="showCustomOptions" class="container py-2 h-32 flex px-4">
       <div class="flex flex-col flex-1">
         <div class="flex mb-2 pr-2">
           <button
