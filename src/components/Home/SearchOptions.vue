@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-12">
-    <div class="absolute bg-searchoption opacity-75 w-full h-12" />
+  <div class="w-full">
+    <div class="absolute bg-searchoption opacity-75 w-full inset-0" />
     <div class="container py-2 h-12 flex justify-center">
       <div class="inline-block relative flex-1">
         <input
@@ -32,8 +32,40 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+
+interface Location {
+  city: string;
+  country: string;
+  staddress: string;
+  postal: string;
+  region: string;
+}
+
 @Component
 export default class SearchOptions extends Vue {
   private location: string = "Asia, Thailand, BKK, Phatumwan";
+
+  async mounted() {
+    // 'https://geocode.xyz/51.50354,-0.12768?geoit=json'
+    try {
+      const location = await new Promise<Coordinates>((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            resolve(position.coords);
+          },
+          () => {
+            reject();
+          }
+        );
+      });
+      const { data } = await this.axios.get<Location>(
+        `https://geocode.xyz/${location.latitude},${location.longitude}?geoit=json`
+      );
+      const { staddress, region, city, postal, country } = data;
+      this.location = `${staddress} ${region} ${city} ${postal} ${country} `;
+    } catch (error) {
+      this.location = "";
+    }
+  }
 }
 </script>

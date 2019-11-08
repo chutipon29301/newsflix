@@ -18,10 +18,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Autocomplete from "v-autocomplete";
 import "v-autocomplete/dist/v-autocomplete.css";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 Vue.use(VueParticles);
 Vue.use(VuePageTransition);
 Vue.use(Autocomplete);
+Vue.use(VueAxios, axios);
 
 library.add(
   faArrowLeft,
