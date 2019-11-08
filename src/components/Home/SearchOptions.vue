@@ -1,7 +1,10 @@
 <template>
   <div class="w-full">
     <div class="absolute bg-searchoption opacity-75 w-full inset-0" />
-    <div v-if="!showCustomOptions" class="container py-2 h-12 flex justify-center">
+    <div
+      v-if="!showCustomOptions"
+      class="container py-2 h-12 flex justify-center"
+    >
       <div class="inline-block relative flex-1">
         <input
           class="appearance-none rounded-l w-full h-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-white text-xs"
@@ -12,14 +15,21 @@
         <div
           class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black"
         >
-          <font-awesome-icon icon="location-arrow" class="text-inputblack mr-2" />
-          <div class="text-inputblack text-xs select-none">Your recent location</div>
+          <font-awesome-icon
+            icon="location-arrow"
+            class="text-inputblack mr-2"
+          />
+          <div class="text-inputblack text-xs select-none">
+            Your recent location
+          </div>
         </div>
       </div>
       <button
         class="bg-searchoptionbutton hover:bg-searchoptionbuttonhover active:bg-searchoptionbuttonactive z-10 text-white px-6 rounded-r text-xs"
         @click="displayCustomOptions"
-      >Change the location</button>
+      >
+        Change the location
+      </button>
     </div>
     <div v-if="showCustomOptions" class="container py-2 h-32 flex">
       <div class="flex flex-col flex-1">
@@ -61,12 +71,16 @@
           </div>
         </div>
       </div>
-      <button class="z-10 flex flex-col items-center justify-center text-white rounded w-40 bg-searchoptionbutton hover:bg-searchoptionbuttonhover active:bg-searchoptionbuttonactive mr-2">
+      <button
+        class="z-10 flex flex-col items-center justify-center text-white rounded w-40 bg-searchoptionbutton hover:bg-searchoptionbuttonhover active:bg-searchoptionbuttonactive mr-2"
+      >
         <font-awesome-icon icon="search" class="text-4xl mb-2" />
         <div class="font-thin">Search</div>
       </button>
-      <button class="z-10 flex flex-col items-center justify-center text-inputblack w-40 hover:text-gray-700 active:text-black"
-      @click="closeCustomOptions">
+      <button
+        class="z-10 flex flex-col items-center justify-center text-inputblack w-40 hover:text-gray-700 active:text-black"
+        @click="closeCustomOptions"
+      >
         <font-awesome-icon icon="times" class="text-4xl mb-2" />
         <div class="font-thin">Cancel</div>
       </button>
