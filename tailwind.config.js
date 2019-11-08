@@ -10,7 +10,10 @@ module.exports = {
         inputblack: "#8C8C8C",
         error: "#EB5757",
         inputhover: "#E0E0E0",
-        searchoption: "#DEDEDE"
+        searchoption: "#DEDEDE",
+        searchoptionbutton: "#4E4E4E",
+        searchoptionbuttonhover: "#3E3E3E",
+        searchoptionbuttonactive: "#2E2E2E"
       }
     }
   },

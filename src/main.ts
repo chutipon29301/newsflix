@@ -12,7 +12,8 @@ import {
   faSearch,
   faUser,
   faEnvelope,
-  faLock
+  faLock,
+  faLocationArrow
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Autocomplete from "v-autocomplete";
@@ -22,7 +23,7 @@ Vue.use(VueParticles);
 Vue.use(VuePageTransition);
 Vue.use(Autocomplete);
 
-library.add(faArrowLeft, faBars, faSearch, faUser, faEnvelope, faLock);
+library.add(faArrowLeft, faBars, faSearch, faUser, faEnvelope, faLock, faLocationArrow);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;
