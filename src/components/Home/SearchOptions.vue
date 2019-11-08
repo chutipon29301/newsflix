@@ -46,7 +46,10 @@ export default class SearchOptions extends Vue {
   private location: string = "Asia, Thailand, BKK, Phatumwan";
 
   async mounted() {
-    // 'https://geocode.xyz/51.50354,-0.12768?geoit=json'
+    await this.getUserAddress();
+  }
+
+  private async getUserAddress() {
     try {
       const location = await new Promise<Coordinates>((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(
