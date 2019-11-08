@@ -13,7 +13,9 @@ import {
   faUser,
   faEnvelope,
   faLock,
-  faLocationArrow
+  faLocationArrow,
+  faMapMarkedAlt,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Autocomplete from "v-autocomplete";
@@ -33,7 +35,9 @@ library.add(
   faUser,
   faEnvelope,
   faLock,
-  faLocationArrow
+  faLocationArrow,
+  faMapMarkedAlt,
+  faTimes
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
