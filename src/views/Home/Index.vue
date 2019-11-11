@@ -1,5 +1,7 @@
 <template>
-  <div class="h-screen bg-blue-400">This is index view</div>
+  <div>
+    <img src="../../assets/banner.jpg" class="h-64 w-full object-cover"/>
+  </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
