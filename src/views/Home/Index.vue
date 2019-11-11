@@ -4,7 +4,7 @@
     <div class="w-full bg-home">
       <div class="container flex justify-between py-8">
         <div class="flex-1">
-          <TopNews/>
+          <TopNews />
         </div>
         <div class="flex-1">
           <div>Most View</div>
@@ -33,6 +33,11 @@
         <PopularTags />
       </div>
     </div>
+    <div class="w-full bg-white">
+      <div class="container">
+        <NewsCategory />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -40,11 +45,14 @@ import { Component, Vue } from "vue-property-decorator";
 import Chip from "@/components/Home/Chip.vue";
 import PopularTags from "@/components/Home/PopularTags.vue";
 import TopNews from "@/components/Home/TopNews.vue";
+import NewsCategory from "@/components/Home/NewsCategory.vue";
+
 @Component({
   components: {
     Chip,
     PopularTags,
-    TopNews
+    TopNews,
+    NewsCategory
   }
 })
 export default class Index extends Vue {}
