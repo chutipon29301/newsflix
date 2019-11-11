@@ -63,7 +63,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import router from "@/router";
 @Component
 export default class Login extends Vue {
   private username: string = "";
@@ -91,7 +90,7 @@ export default class Login extends Vue {
     ) {
       this.shouldShowError = false;
       setTimeout(() => {
-        router.push("/");
+        this.$router.push("/");
       }, 500);
       this.$store.dispatch("signIn", this.rememberUser);
     } else {

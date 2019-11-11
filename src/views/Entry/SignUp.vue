@@ -119,7 +119,10 @@ export default class SignUp extends Vue {
 
   private createAccount() {
     if (this.allowToCreateAccount) {
-      this.$router.push("/");
+      setTimeout(() => {
+        this.$store.dispatch("signIn", false);
+        this.$router.push("/");
+      }, 500);
     }
   }
 
