@@ -1,14 +1,18 @@
 <template>
-  <div class="flex bg-white">
-    <img src="../../assets/news/top5_1.png" class="w-16 mr-2" />
-    <div class="flex-row">
-      <div class="text-black">This is small news item component</div>
-      <div class="text-gray-700 text-sm">This is small news item component</div>
+  <div class="flex bg-white h-24">
+    <img :src="imgSrc" class="mr-2 object-cover" />
+    <div class="flex-row flex-1 flex flex-col justify-between">
+      <div class="text-black leading-none">{{title}}</div>
+      <div class="text-gray-700 text-sm leading-none">
+        {{detail}}
+      </div>
       <div class="flex items-center justify-between">
-        <div class="text-black text-xs text-gray-700">Hello</div>
+        <div class="text-black text-xs text-gray-700">
+          <slot />
+        </div>
         <div class="flex items-center">
-        <font-awesome-icon class="text-black mr-1" icon="map-marker-alt" />
-        <div class="text-black text-xs text-gray-700">Hello</div>
+          <font-awesome-icon class="text-black mr-1" icon="map-marker-alt" />
+          <div class="text-black text-xs text-gray-700 mr-4">BKK, Thailand</div>
         </div>
       </div>
     </div>
@@ -16,9 +20,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class SmallNewsItem extends Vue {
-  mounted() {}
+  @Prop() private title!: string;
+  @Prop() private img!: string;
+  @Prop() private detail!: string;
+
+  private get imgSrc() {
+    return require(`../../assets/news/${this.img}`);
+  }
 }
 </script>
