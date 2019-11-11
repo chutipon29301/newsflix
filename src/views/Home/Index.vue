@@ -2,12 +2,9 @@
   <div>
     <img src="../../assets/banner.jpg" class="h-64 w-full object-cover" />
     <div class="w-full bg-home">
-      <div class="container flex justify-between text-white font-semibold text-xl py-8">
+      <div class="container flex justify-between py-8">
         <div class="flex-1">
-          <div>TOP 5</div>
-          <div>
-           <SmallNewsItem />
-          </div>
+          <TopNews/>
         </div>
         <div class="flex-1">
           <div>Most View</div>
@@ -33,22 +30,21 @@
     </div>
     <div class="w-full bg-inputhover">
       <div class="container">
-        <PopularTags/>
+        <PopularTags />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import SmallNewsItem from "@/components/Home/SmallNewsItem.vue";
 import Chip from "@/components/Home/Chip.vue";
 import PopularTags from "@/components/Home/PopularTags.vue";
-
+import TopNews from "@/components/Home/TopNews.vue";
 @Component({
   components: {
-    SmallNewsItem,
     Chip,
-    PopularTags
+    PopularTags,
+    TopNews
   }
 })
 export default class Index extends Vue {}
