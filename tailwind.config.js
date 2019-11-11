@@ -14,7 +14,7 @@ module.exports = {
         searchoptionbutton: "#4E4E4E",
         searchoptionbuttonhover: "#3E3E3E",
         searchoptionbuttonactive: "#2E2E2E",
-        home: "#A01E18"
+        home: "#A01E18",
       }
     }
   },
