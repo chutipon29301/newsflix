@@ -1,16 +1,12 @@
 <template>
   <div>
-    <img src="../../assets/banner.jpg" class="h-64 w-full object-cover"/>
+    <img src="../../assets/banner.jpg" class="h-64 w-full object-cover" />
     <div class="w-full bg-home">
       <div class="container flex justify-between text-white font-semibold text-xl py-8">
         <div class="flex-1">
           <div>TOP 5</div>
           <div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
+           <SmallNewsItem />
           </div>
         </div>
         <div class="flex-1">
@@ -39,6 +35,11 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-@Component
+import SmallNewsItem from "@/components/Home/SmallNewsItem.vue";
+@Component({
+  components: {
+    SmallNewsItem
+  }
+})
 export default class Index extends Vue {}
 </script>
