@@ -15,7 +15,8 @@ module.exports = {
         searchoptionbuttonhover: "#3E3E3E",
         searchoptionbuttonactive: "#2E2E2E",
         home: "#A01E18",
-        trendchip: "#B81F1F"
+        trendchip: "#B81F1F",
+        footer: "#440505"
       }
     }
   },
