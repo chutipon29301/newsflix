@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-4 pb-8">
+  <div>
     <div class="flex w-full justify-between items-center mb-4">
       <div class="flex items-center">
         <font-awesome-icon icon="tags" class="mr-4" />
