@@ -1,11 +1,9 @@
 <template>
   <div class="flex bg-white h-24">
-    <img :src="imgSrc" class="mr-2 object-cover" />
+    <img :src="imgSrc" class="w-24 mr-2 object-cover" />
     <div class="flex-row flex-1 flex flex-col justify-between">
-      <div class="text-black leading-none">{{title}}</div>
-      <div class="text-gray-700 text-sm leading-none">
-        {{detail}}
-      </div>
+      <div class="mt-1 text-black leading-none">{{title}}</div>
+      <div class="text-gray-700 text-sm leading-none">{{detail}}</div>
       <div class="flex items-center justify-between">
         <div class="text-black text-xs text-gray-700">
           <slot />

@@ -24,40 +24,36 @@ export default class TopNews extends Vue {
     {
       title: "Hong Kong police officer shoots protester",
       img: "top5_1.png",
-      detail: "A 21-year-old protester was shot with a live round by a police officer.",
+      detail:
+        "A 21-year-old protester was shot with a live round by a police officer.",
       date: "11 November 2019"
     },
     {
       title: "Sydney under 'catastrophic' warning from dozens of bushfires ",
       img: "top5_2.png",
-      detail: "Fire officials are warning of \"catastrophic fire danger\"",
+      detail: 'Fire officials are warning of "catastrophic fire danger"',
       date: "11 November 2019"
     },
     {
-      title: "Hong Kong police officer shoots protester",
-      img: "top5_1.png",
-      detail: "A 21-year-old protester was shot with a live round by a police officer.",
-      date: "11 November 2019"
+      title: "Spanish elections: Socialists win amid far right surge",
+      img: "top5_3.png",
+      detail: "Vox came third, increasing its vote share by more than double.",
+      date: "8 November 2019"
     },
     {
-      title: "Hong Kong police officer shoots protester",
-      img: "top5_1.png",
-      detail: "A 21-year-old protester was shot with a live round by a police officer.",
-      date: "11 November 2019"
+      title: "General election 2019: The mystery of the Russia report",
+      img: "top5_4.png",
+      detail:
+        "A row has broken out over the publication of an intelligence report.",
+      date: "5 November 2019"
     },
     {
-      title: "Hong Kong police officer shoots protester",
-      img: "top5_1.png",
-      detail: "A 21-year-old protester was shot with a live round by a police officer.",
-      date: "11 November 2019"
+      title: "Nikki Haley says she was told to undermine Trumo",
+      img: "top5_5.png",
+      detail:
+        "She makes the allogations in a new book about her time as US ambassador.",
+      date: "2 November 2019"
     }
   ];
-  // private dates: string[] = [
-  //   "11 November 2019",
-  //   "11 November 2019",
-  //   "8 November 2019",
-  //   "5 November 2019",
-  //   "2 November 2019"
-  // ];
 }
 </script>
