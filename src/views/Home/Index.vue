@@ -10,7 +10,7 @@
             <MostViewNews/>
         </div>
         <div class="flex-1">
-          <MostViewNews/>
+          <MostRecentNews/>
         </div>
       </div>
     </div>
@@ -27,12 +27,14 @@ import Chip from "@/components/Home/Chip.vue";
 import PopularTags from "@/components/Home/PopularTags.vue";
 import TopNews from "@/components/Home/TopNews.vue";
 import MostViewNews from "@/components/Home/MostViewNews.vue";
+import MostRecentNews from "@/components/Home/MostRecentNews.vue";
 @Component({
   components: {
     Chip,
     PopularTags,
     TopNews,
-    MostViewNews
+    MostViewNews,
+    MostRecentNews
   }
 })
 export default class Index extends Vue {}
