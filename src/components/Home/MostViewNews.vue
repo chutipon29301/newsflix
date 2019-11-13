@@ -27,36 +27,37 @@ import SmallNewsItem from "@/components/Home/SmallNewsItem.vue";
 export default class MostViewNews extends Vue {
   private newsSources: any[] = [
     {
-      title: "Hong Kong police officer shoots protester",
-      img: "top5_1.png",
+      title: "Liverpool takes control of title race",
+      img: "most_view_1.png",
       detail:
-        "A 21-year-old protester was shot with a live round by a police officer.",
+        "Victory over reigning champions Manchester City opened up the lead.",
       view: "252.6k"
     },
     {
-      title: "Sydney under 'catastrophic' warning from dozens of bushfires ",
-      img: "top5_2.png",
-      detail: 'Fire officials are warning of "catastrophic fire danger"',
+      title: "How the CIA built the worlds fastest plane",
+      img: "most_view_2.png",
+      detail: "The Lockheed SR-71, designed in secrecy in the late 1950s.",
       view: "214.3k"
     },
     {
-      title: "Spanish elections: Socialists win amid far right surge",
-      img: "top5_3.png",
-      detail: "Vox came third, increasing its vote share by more than double.",
+      title: "Best architecture constructions of 2019 revealed",
+      img: "most_view_3.png",
+      detail:
+        "The shortlist, announced this week, showcases the best of 2,000 entries ",
       view: "122.2k"
     },
     {
-      title: "General election 2019: The mystery of the Russia report",
-      img: "top5_4.png",
+      title: "ISIS target vulnerable domsteic workers",
+      img: "most_view_4.png",
       detail:
-        "A row has broken out over the publication of an intelligence report.",
+        "Promoted ISIS online, donated money to militants overseas, and much more.",
       view: "122.0k"
     },
     {
-      title: "Nikki Haley says she was told to undermine Trumo",
-      img: "top5_5.png",
+      title: "5 killed, 300 injured as earthquake hits northwestern Iran",
+      img: "most_view_5.png",
       detail:
-        "She makes the allogations in a new book about her time as US ambassador.",
+        "At least five people killed and 330 injured after a 5.9-mag. earthquake.",
       view: "100.2k"
     }
   ];
