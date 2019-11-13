@@ -17,7 +17,8 @@ import {
   faMapMarkedAlt,
   faTimes,
   faMapMarkerAlt,
-  faTags
+  faTags,
+  faEye
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Autocomplete from "v-autocomplete";
@@ -41,7 +42,8 @@ library.add(
   faMapMarkedAlt,
   faTimes,
   faMapMarkerAlt,
-  faTags
+  faTags,
+  faEye
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
