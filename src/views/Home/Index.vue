@@ -9,24 +9,10 @@
           <TopNews />
         </div>
         <div class="flex-1">
-          <div>Most View</div>
-          <div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-          </div>
+            <MostViewNews/>
         </div>
         <div class="flex-1">
-          <div>Most Recent</div>
-          <div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-          </div>
+          <MostViewNews/>
         </div>
       </div>
     </div>
@@ -53,13 +39,14 @@ import Chip from "@/components/Home/Chip.vue";
 import PopularTags from "@/components/Home/PopularTags.vue";
 import TopNews from "@/components/Home/TopNews.vue";
 import NewsCategory from "@/components/Home/NewsCategory.vue";
-
+import MostViewNews from "@/components/Home/MostViewNews.vue";
 @Component({
   components: {
     Chip,
     PopularTags,
     TopNews,
-    NewsCategory
+    NewsCategory,
+    MostViewNews
   }
 })
 export default class Index extends Vue {}

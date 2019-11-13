@@ -18,7 +18,8 @@ import {
   faTimes,
   faMapMarkerAlt,
   faTags,
-  faLaptop
+  faLaptop,
+  faEye
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Autocomplete from "v-autocomplete";
@@ -43,7 +44,8 @@ library.add(
   faTimes,
   faMapMarkerAlt,
   faTags,
-  faLaptop
+  faLaptop,
+  faEye
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
