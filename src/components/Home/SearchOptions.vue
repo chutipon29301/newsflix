@@ -1,11 +1,9 @@
 <template>
   <div class="w-full">
     <div class="absolute bg-searchoption opacity-75 w-full inset-0" />
-    <div v-if="!showCustomOptions" class="container py-2 flex justify-center px-4">
-      <BasicSearchOptions :location="location" :toggleFunction="displayCustomOptions" />
-    </div>
-    <div v-if="showCustomOptions" class="container py-2 flex px-4">
-      <DetailSearchOptions :toggleFunction="closeCustomOptions"/>
+    <div class="content-center p-2">
+      <BasicSearchOptions v-if="!showCustomOptions" :location="location" :toggleFunction="displayCustomOptions" />
+      <DetailSearchOptions v-else :toggleFunction="closeCustomOptions"/>
     </div>
   </div>
 </template>
