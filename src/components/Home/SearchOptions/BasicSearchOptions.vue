@@ -1,5 +1,5 @@
 <template>
-  <div class="h-8 w-full flex">
+  <div class="h-8 w-full flex container">
     <div class="inline-block relative flex-1">
       <input
         class="appearance-none rounded-l w-full h-full py-1 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-white text-xs"
