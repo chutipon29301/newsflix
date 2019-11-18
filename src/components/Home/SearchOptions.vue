@@ -2,8 +2,14 @@
   <div class="w-full">
     <div class="absolute bg-searchoption opacity-75 w-full inset-0" />
     <div class="content-center p-2">
-      <BasicSearchOptions v-if="!showCustomOptions" :location="location" :toggleFunction="displayCustomOptions" />
-      <DetailSearchOptions v-else :toggleFunction="closeCustomOptions"/>
+      <vue-page-transition name="fade">
+        <BasicSearchOptions
+          v-if="!showCustomOptions"
+          :location="location"
+          :toggleFunction="displayCustomOptions"
+        />
+        <DetailSearchOptions v-else :toggleFunction="closeCustomOptions" />
+      </vue-page-transition>
     </div>
   </div>
 </template>
