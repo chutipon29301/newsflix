@@ -6,8 +6,13 @@
         <vAutocomplete
           class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
           :items="items"
+          :getLabel="getLabel"
+          @update-items="updateItems"
+          @item-clicked="itemClicked"
           v-model="item"
           :component-item="template"
+          :min-len="1"
+          :wait="10"
           placeholder="Search"
         />
         <div
@@ -52,7 +57,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import vAutocomplete from "v-autocomplete";
-import searchItems from "@/components/Home/SearchItems.vue";
+import searchItems, { SearchNews } from "@/components/Home/SearchItems.vue";
 import Dropdown from "@/components/Home/Dropdown.vue";
 
 @Component({
@@ -63,7 +68,47 @@ import Dropdown from "@/components/Home/Dropdown.vue";
 })
 export default class NavBar extends Vue {
   private template = searchItems;
-  private item: string = "";
-  private items: string[] = ["a", "b"];
+  private item: SearchNews | null = null;
+  private searchText: string = "";
+  private initialItems: SearchNews[] = [
+    {
+      img: "top5_1.png",
+      title: "Ex tempor commodo eiusmod dolore minim exercitation pariatur ut.",
+      description: "Velit sunt fugiat laborum eiusmod.",
+      location: "Aliquip sit consequat in nostrud.",
+      view: "200k"
+    },
+    {
+      img: "top5_2.png",
+      title:
+        "Nostrud est mollit pariatur cillum incididunt veniam occaecat tempor ea ex.",
+      description:
+        "Cupidatat dolor incididunt voluptate aute ipsum fugiat ipsum sint tempor.",
+      location: "Proident esse officia consectetur Lorem.",
+      view: "200k"
+    }
+  ];
+
+  private get items(): SearchNews[] {
+    return this.initialItems.filter(o => {
+      return (
+        o.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        o.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        o.location.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    });
+  }
+
+  private getLabel(): string {
+    return "";
+  }
+
+  private updateItems(searchText: string) {
+    this.searchText = searchText;
+  }
+
+  private itemClicked() {
+    this.$router.push("/#");
+  }
 }
 </script>

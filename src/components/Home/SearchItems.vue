@@ -1,24 +1,39 @@
 <template>
   <div class="h-24 flex">
-    <img src="../../assets/news/top5_1.png" class="object-none pr-3 h-full" />
+    <img :src="imgSrc" class="object-none pr-3 h-full" />
     <div class="flex flex-col h-full py-2 justify-between">
-      <div>Esse Lorem do dolore aliquip do dolor ea officia.</div>
-      <div class="text-gray-600 text-xs">Sit duis cupidatat laboris labore velit.</div>
+      <div>{{item.title}}</div>
+      <div class="text-gray-600 text-xs">{{item.description}}</div>
       <div class="flex items-center text-gray-600 text-xs">
         <div class="flex items-center mr-4">
           <font-awesome-icon class="mr-1" icon="eye" />
-          <div>242.6k</div>
+          <div>{{item.view}}</div>
         </div>
         <div class="flex items-center">
           <font-awesome-icon class="mr-1" icon="map-marker-alt" />
-          <div>BKK, Thailand</div>
+          <div>{{item.location}}</div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
+
+export interface SearchNews {
+  img: string;
+  title: string;
+  description: string;
+  view: string;
+  location: string;
+}
+
 @Component
-export default class SearchItems extends Vue {}
+export default class SearchItems extends Vue {
+  @Prop() private item!: SearchNews;
+
+  private get imgSrc() {
+    return require(`../../assets/news/${this.item.img}`);
+  }
+}
 </script>
