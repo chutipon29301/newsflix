@@ -5,7 +5,7 @@
         <font-awesome-icon icon="tags" class="mr-4" />
         <div class="text-xl font-semibold">Technology</div>
       </div>
-      <div>Hello World</div>
+      <CategorySelector/>
     </div>
     <div class="flex flex-col sm:flex-row">
       <NewsItem
@@ -32,9 +32,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import NewsItem from "@/components/Home/NewsItem.vue";
+import CategorySelector from "@/components/Home/CategorySelector.vue";
+
 @Component({
   components: {
-    NewsItem
+    NewsItem,
+    CategorySelector,
   }
 })
 export default class NewsCategory extends Vue {
