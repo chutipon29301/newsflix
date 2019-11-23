@@ -38,7 +38,7 @@ export default class SearchOptions extends Vue {
   private showCustomOptions: boolean = false;
 
   async mounted() {
-    // await this.getUserAddress();
+    await this.getUserAddress();
   }
 
   private async getUserAddress() {
