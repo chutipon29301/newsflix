@@ -9,10 +9,10 @@
           <TopNews />
         </div>
         <div class="flex-1">
-            <MostViewNews/>
+          <MostViewNews />
         </div>
         <div class="flex-1">
-          <MostRecentNews/>
+          <MostRecentNews />
         </div>
       </div>
     </div>
@@ -28,7 +28,11 @@
     </div>
     <div class="w-full bg-inputhover">
       <div class="container bg-inputhover">
-        <button class="w-full h-12 bg-inputhover hover:bg-gray-300 active:bg-gray-400 font-semibold underline">See more</button>
+        <button
+          class="w-full h-12 bg-inputhover hover:bg-gray-300 active:bg-gray-400 font-semibold underline"
+        >
+          See more
+        </button>
       </div>
     </div>
   </div>

@@ -5,7 +5,9 @@
       <div class="text-xl font-semibold">Popular Tags</div>
     </div>
     <div class="flex flex-wrap">
-      <Chip v-for="chip in chips" :key="chip" class="mr-4 mb-4">{{chip}}</Chip>
+      <Chip v-for="chip in chips" :key="chip" class="mr-4 mb-4">{{
+        chip
+      }}</Chip>
     </div>
   </div>
 </template>

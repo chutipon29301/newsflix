@@ -5,7 +5,7 @@
         <font-awesome-icon icon="tags" class="mr-4" />
         <div class="text-xl font-semibold">Technology</div>
       </div>
-      <CategorySelector/>
+      <CategorySelector />
     </div>
     <div class="flex flex-col sm:flex-row">
       <NewsItem
@@ -37,7 +37,7 @@ import CategorySelector from "@/components/Home/CategorySelector.vue";
 @Component({
   components: {
     NewsItem,
-    CategorySelector,
+    CategorySelector
   }
 })
 export default class NewsCategory extends Vue {

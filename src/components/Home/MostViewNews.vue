@@ -11,7 +11,7 @@
     >
       <div class="flex items-center">
         <font-awesome-icon class="text-black mr-1" icon="eye" />
-        <div class="text-black text-xs text-gray-700 mr-4">{{news.view}}</div>
+        <div class="text-black text-xs text-gray-700 mr-4">{{ news.view }}</div>
       </div>
     </SmallNewsItem>
   </div>

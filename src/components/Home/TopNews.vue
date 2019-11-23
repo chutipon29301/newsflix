@@ -8,7 +8,8 @@
       :img="news.img"
       :detail="news.detail"
       class="w-full"
-    >{{news.date}}</SmallNewsItem>
+      >{{ news.date }}</SmallNewsItem
+    >
   </div>
 </template>
 <script lang="ts">

@@ -3,9 +3,17 @@
     <button
       v-for="category in categories"
       :key="category"
-      :class="`flex-1 rounded ${selectedCategory === category ? 'font-bold bg-gray-400 text-black' : 'hover:bg-gray-200 hover:font-semibold active:bg-gray-300'}`"
+      :class="
+        `flex-1 rounded ${
+          selectedCategory === category
+            ? 'font-bold bg-gray-400 text-black'
+            : 'hover:bg-gray-200 hover:font-semibold active:bg-gray-300'
+        }`
+      "
       @click="selectedCategory = category"
-    >{{category}}</button>
+    >
+      {{ category }}
+    </button>
   </div>
 </template>
 
