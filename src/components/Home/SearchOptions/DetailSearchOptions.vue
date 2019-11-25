@@ -25,8 +25,7 @@
               v-for="continent in continents"
               :key="continent"
               :value="continent"
-              >{{ continent }}</option
-            >
+            >{{ continent }}</option>
           </select>
           <div
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
@@ -36,9 +35,7 @@
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
-              <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-              />
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
             </svg>
           </div>
         </div>
@@ -48,12 +45,7 @@
             v-model="country"
           >
             <option selected="selected" value>e.g. Thailand</option>
-            <option
-              v-for="country in countries"
-              :key="country"
-              :value="country"
-              >{{ country }}</option
-            >
+            <option v-for="country in countries" :key="country" :value="country">{{ country }}</option>
           </select>
           <div
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
@@ -63,9 +55,7 @@
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
-              <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-              />
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
             </svg>
           </div>
         </div>
@@ -74,12 +64,7 @@
             class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
           >
             <option selected="selected">e.g. Bangkok</option>
-            <option
-              v-for="province in provinces"
-              :key="province"
-              :value="province"
-              >{{ province }}</option
-            >
+            <option v-for="province in provinces" :key="province" :value="province">{{ province }}</option>
           </select>
           <div
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
@@ -89,9 +74,7 @@
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
-              <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-              />
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
             </svg>
           </div>
         </div>
@@ -136,7 +119,44 @@ export default class DetailSearchOptions extends Vue {
       countries: [
         {
           name: "Thailand",
-          provinces: ["Bangkok", "Phuket"]
+          provinces: ["Bangkok", "Chiang Mai", "Chiang Rai", "Krabi", "Phuket"]
+        },
+        {
+          name: "China",
+          provinces: [
+            "Anhui Province",
+            "Beijing Municipality",
+            "Chongqing Municipality",
+            "Fujian Province",
+            "Guangdong Province"
+          ]
+        },
+        {
+          name: "Japan",
+          provinces: ["Hokkaido", "Aomori", "Ibaraki", "Kyoto", "Tokyo"]
+        },
+        {
+          name: "South Korea",
+          provinces: [
+            "Chungcheong",
+            "Gangwon",
+            "Gyeonggi",
+            "Gyeongsang",
+            "Jeolla"
+          ]
+        }
+      ]
+    },
+    {
+      name: "Europe",
+      countries: [
+        {
+          name: "France",
+          provinces: ["Alsace", "Artois", "Basse-Navarre", "Béarn", "Auvergne"]
+        },
+        {
+          name: "Spain",
+          provinces: ["Barcelona", "Cantabria", "Cuenca", "Lugo", "Madrid"]
         }
       ]
     }
