@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-2/5 text-gray-700">
+  <div class="flex flex-col md:flex-row w-2/5 text-gray-700">
     <button
       v-for="category in categories"
       :key="category"
